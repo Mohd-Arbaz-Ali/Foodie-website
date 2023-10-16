@@ -67,7 +67,7 @@ export default function Home() {
 
             <div className='container m-3'>
                 {
-                    foodCat!==[] ?
+                    foodCat.length!==0 ?
                         foodCat.map((data) => {
                             return (
                                 <div className='row m-2'>
@@ -75,7 +75,7 @@ export default function Home() {
                                         {data.CategoryName}
                                     </div>
                                     <hr />
-                                    {foodItem!==[] ?
+                                    {foodItem.length!==0 ?
                                         foodItem.filter((item) => item.CategoryName === data.CategoryName && item.name.toLowerCase().includes(search.toLocaleLowerCase()))  //the second check after && is to match the searched word with the item name
                                             .map(filteredItems => {
                                                 return (
