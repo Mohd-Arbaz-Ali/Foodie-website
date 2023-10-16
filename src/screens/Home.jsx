@@ -5,13 +5,10 @@ import Card from '../components/Card';
 
 export default function Home() {
     const [search, setsearch] = useState("")
-    const [foodCat, setfoodCat] = useState([]);
-    const [foodItem, setfoodItem] = useState([]);
+    const [foodCat, setfoodCat] = useState(null);
+    const [foodItem, setfoodItem] = useState(null);
 
     const loadData = async () => {
-        console.log(foodCat);
-        console.log(foodItem);
-        console.log(foodCat.length);
         let response = await fetch("https://project-api-r3qo.onrender.com/api/foodData", {
             method: "GET",
             headers: {
@@ -23,8 +20,7 @@ export default function Home() {
         // console.log(response);
         setfoodCat(response[1]);
         setfoodItem(response[0]);
-        console.log(foodCat);
-        console.log(foodItem);
+        console.log("sets");
     }
 
     // useEffect is used when the page loads first time, remember to include this dependence in the first line
@@ -67,7 +63,7 @@ export default function Home() {
 
             <div className='container m-3'>
                 {
-                    foodCat.length!==0 ?
+                    foodCat!==null ?
                         foodCat.map((data) => {
                             return (
                                 <div className='row m-2'>
@@ -75,7 +71,7 @@ export default function Home() {
                                         {data.CategoryName}
                                     </div>
                                     <hr />
-                                    {foodItem.length!==0 ?
+                                    {foodItem!==null ?
                                         foodItem.filter((item) => item.CategoryName === data.CategoryName && item.name.toLowerCase().includes(search.toLocaleLowerCase()))  //the second check after && is to match the searched word with the item name
                                             .map(filteredItems => {
                                                 return (
