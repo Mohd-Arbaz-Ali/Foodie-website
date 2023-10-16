@@ -5,8 +5,8 @@ import Card from '../components/Card';
 
 export default function Home() {
     const [search, setsearch] = useState("")
-    const [foodCat, setfoodCat] = useState(null);
-    const [foodItem, setfoodItem] = useState(null);
+    const [foodCat, setfoodCat] = useState([]);
+    const [foodItem, setfoodItem] = useState([]);
 
     const loadData = async () => {
         let response = await fetch("https://project-api-r3qo.onrender.com/api/foodData", {
@@ -62,7 +62,7 @@ export default function Home() {
 
             <div className='container m-3'>
                 {
-                    foodCat !== null ?
+                    foodCat.length !== 0 ?
                         foodCat.map((data) => {
                             return (
                                 <div className='row m-2'>
@@ -70,7 +70,7 @@ export default function Home() {
                                         {data.CategoryName}
                                     </div>
                                     <hr />
-                                    {foodItem.length!==null ?
+                                    {foodItem.length!==0 ?
                                         foodItem.filter((item) => item.CategoryName === data.CategoryName && item.name.toLowerCase().includes(search.toLocaleLowerCase()))  //the second check after && is to match the searched word with the item name
                                             .map(filteredItems => {
                                                 return (
