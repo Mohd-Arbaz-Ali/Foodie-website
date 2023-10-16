@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 
 export default function MyOrder() {
 
-    const [orderData, setorderData] = useState({})
+    const [orderData, setorderData] = useState(null)
 
     const fetchMyOrder = async () => {
         await fetch("https://project-api-r3qo.onrender.com/api/myOrders", {
@@ -44,7 +44,7 @@ export default function MyOrder() {
             <div className='container'>
                 <div className='row'>
 
-                    {orderData !== {} ? Array(orderData).map(data => {
+                    {orderData !== null ? Array(orderData).map(data => {
                         return (
                             data.orderData ?
                                 data.orderData.order_data.slice(0).reverse().map((item) => {
