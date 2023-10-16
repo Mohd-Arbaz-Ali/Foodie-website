@@ -20,6 +20,7 @@ export default function Home() {
         // console.log(response);
         setfoodCat(response[1]);
         setfoodItem(response[0]);
+        console.log("sets");
     }
 
     // useEffect is used when the page loads first time, remember to include this dependence in the first line
