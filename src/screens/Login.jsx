@@ -21,7 +21,7 @@ export default function Login() {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        const response = await fetch("https://project-api-14pl.onrender.com/api/loginUser", {
+        const response = await fetch("https://project-api-r3qo.onrender.com/api/loginUser", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

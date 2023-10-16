@@ -20,7 +20,7 @@ export default function Signup() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const response = await fetch("https://project-api-14pl.onrender.com/api/createuser", {
+        const response = await fetch("https://project-api-r3qo.onrender.com/api/createuser", {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
