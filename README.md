@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Note
+
+This is the frontend repository which is hoted on vercel, the backend repository link is here : https://github.com/Mohd-Arbaz-Ali/Foodie-api Which is hosted on render. To see the backend code please visit the backend repo.
+
 ## Available Scripts
 
 In the project directory, you can run:
